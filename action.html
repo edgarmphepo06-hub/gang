@@ -75,7 +75,7 @@ nav ul li a:hover {
   box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* ABOUT TEXT IMPROVEMENT */
+/* ABOUT */
 #about h3 {
   color:#0066cc;
   margin-top:20px;
@@ -97,6 +97,17 @@ nav ul li a:hover {
   text-align:center;
 }
 
+/* SERVICE ICONS */
+.service img {
+  height:60px;
+  margin-bottom:10px;
+  transition:0.3s;
+}
+
+.service img:hover {
+  transform:scale(1.15);
+}
+
 /* SOCIAL ICONS */
 .social-icons {
   text-align:center;
@@ -111,11 +122,6 @@ nav ul li a:hover {
 
 .social-icons img:hover {
   transform:scale(1.2);
-}
-
-/* SCROLL OFFSET */
-section, .card {
-  scroll-margin-top:80px;
 }
 
 /* FOOTER */
@@ -133,11 +139,17 @@ footer {
     background:#111;
   }
 }
+
+/* SCROLL FIX */
+section, .card {
+  scroll-margin-top:80px;
+}
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
   <nav>
     <img src="LOGO.jpg" alt="NADA Logo">
@@ -150,6 +162,7 @@ footer {
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero" id="home">
   <h2>Welcome to NADA</h2>
   <p>Next Level Advanced Digital Administration — Innovating Digital Growth</p>
@@ -157,50 +170,49 @@ footer {
 
 <div class="container">
 
-<!-- UPDATED ABOUT -->
+<!-- ABOUT (FULL PROFESSIONAL VERSION) -->
 <div class="card" id="about">
   <h2>About NADA</h2>
 
   <p>
-    <strong>Next Level Advanced Digital Administration (NADA)</strong> is a Malawian digital initiative 
-    founded on principles of innovation, structured governance, and technological advancement. 
-    The organization was initiated at William Murray Secondary School.
+    <strong>Next Level Advanced Digital Administration (NADA)</strong> is a Malawian digital initiative
+    established to promote innovation, structured administration, and technological advancement.
+    It originated at <strong>William Murray Secondary School</strong>, an institution under the Nkhoma Synod.
   </p>
 
-  <h3>Founding History & Establishment</h3>
+  <h3>Founding History & Early Establishment</h3>
 
   <p>
-    The concept of NADA was formally proposed by <strong>Edgar Mphepo</strong> on 
-    <strong>06 June 2024 at 19:48:36 hrs</strong> as a student-led initiative focused on 
-    digital innovation and structured administration.
-  </p>
-
-  <p>
-    <strong>Eugene Banda</strong> was present as the first recorded witness during the 
-    initial conceptual discussions and early formation phase of the initiative.
+    NADA was conceptually proposed by <strong>Edgar Mphepo</strong> during Form 3 on 
+    <strong>06 June 2024 at 19:48:36 hrs</strong>. It began as a student-driven initiative focused on 
+    digital innovation and structured administrative systems.
   </p>
 
   <p>
-    The initiative was officially announced on 
-    <strong>18 June 2024 at 18:30 hrs</strong>, marking its formal establishment.
+    <strong>Eugene Banda</strong> served as the first recorded witness during the early conceptual stage 
+    and contributed to foundational discussions during the formation phase.
   </p>
 
   <p>
-    Recruitment into NADA followed a structured interview process. Applicants were 
-    assessed against defined standards, and those who did not meet the criteria were 
-    formally informed of the outcome.
+    The initiative was officially announced on <strong>18 June 2024 at 18:30 hrs</strong>, marking its 
+    formal establishment within the academic environment.
   </p>
 
   <p>
-    During its early phase, NADA operated in a controlled and discreet manner to 
-    maintain discipline, focus, and structured growth. This approach supported a 
-    selective recruitment model, ensuring only committed and capable individuals 
-    were integrated, while others contributed ideas and observed its development.
+    Recruitment was conducted through a structured interview process where applicants were assessed 
+    based on defined criteria. Those who did not meet requirements were formally informed, ensuring 
+    transparency and discipline in selection.
   </p>
 
   <p>
-    Today, NADA continues to evolve as a structured digital organization committed 
-    to delivering innovative solutions in administration, networking, and digital systems.
+    During its early phase, NADA operated under a controlled and discreet framework to maintain focus, 
+    discipline, and structured growth. This allowed selective integration of committed individuals 
+    while encouraging external observation and contribution of ideas.
+  </p>
+
+  <p>
+    Today, NADA continues to grow as a structured digital organization focused on delivering innovative 
+    solutions in administration, networking, and digital systems development.
   </p>
 </div>
 
@@ -209,25 +221,31 @@ footer {
   <h2>Our Services</h2>
 
   <div class="services">
+
     <div class="service">
+      <img src="https://cdn-icons-png.flaticon.com/512/1048/1048949.png">
       <h3>Network Solutions</h3>
       <p>Secure and scalable connectivity systems.</p>
     </div>
 
     <div class="service">
+      <img src="https://cdn-icons-png.flaticon.com/512/1048/1048926.png">
       <h3>Web Development</h3>
       <p>Modern responsive websites.</p>
     </div>
 
     <div class="service">
+      <img src="https://cdn-icons-png.flaticon.com/512/1048/1048933.png">
       <h3>Graphics & Branding</h3>
       <p>Creative identity solutions.</p>
     </div>
 
     <div class="service">
+      <img src="https://cdn-icons-png.flaticon.com/512/1048/1048913.png">
       <h3>Admin Tools</h3>
       <p>Efficient digital workflows.</p>
     </div>
+
   </div>
 </div>
 
@@ -239,7 +257,7 @@ footer {
 
   <div class="social-icons">
 
-    <!-- WHATSAPP FIRST -->
+    <!-- WHATSAPP -->
     <a href="https://wa.me/265894702478?text=Hello%20NADA%2C%20I%20am%20interested%20in%20your%20services" target="_blank">
       <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
     </a>
@@ -269,10 +287,12 @@ footer {
 
 </div>
 
+<!-- FOOTER -->
 <footer>
   <p>© 2026 NADA — Next Level Advanced Digital Administration</p>
 </footer>
 
+<!-- SMOOTH SCROLL -->
 <script>
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', function(e) {
