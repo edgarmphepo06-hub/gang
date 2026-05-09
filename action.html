@@ -39,8 +39,6 @@ nav ul {
   padding:0;
 }
 
-nav ul li { position:relative; }
-
 nav ul li a {
   color:#fff;
   padding:10px 15px;
@@ -77,6 +75,17 @@ nav ul li a:hover {
   box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
 
+/* ABOUT TEXT IMPROVEMENT */
+#about h3 {
+  color:#0066cc;
+  margin-top:20px;
+}
+
+#about p {
+  line-height:1.6;
+  margin-bottom:12px;
+}
+
 /* SERVICES */
 .services {
   display:grid;
@@ -94,12 +103,9 @@ nav ul li a:hover {
   margin-top:15px;
 }
 
-.social-icons a {
-  margin:0 10px;
-}
-
 .social-icons img {
   height:35px;
+  margin:0 10px;
   transition:0.3s;
 }
 
@@ -107,7 +113,7 @@ nav ul li a:hover {
   transform:scale(1.2);
 }
 
-/* SCROLL OFFSET FIX */
+/* SCROLL OFFSET */
 section, .card {
   scroll-margin-top:80px;
 }
@@ -132,7 +138,6 @@ footer {
 
 <body>
 
-<!-- HEADER -->
 <header>
   <nav>
     <img src="LOGO.jpg" alt="NADA Logo">
@@ -145,7 +150,6 @@ footer {
   </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero" id="home">
   <h2>Welcome to NADA</h2>
   <p>Next Level Advanced Digital Administration — Innovating Digital Growth</p>
@@ -153,11 +157,51 @@ footer {
 
 <div class="container">
 
-<!-- ABOUT -->
+<!-- UPDATED ABOUT -->
 <div class="card" id="about">
-  <h2>About Us</h2>
-  <p>NADA was founded by <strong>Edgar Mphepo</strong> in June 2024.</p>
-  <p>It has evolved into a digital administration and networking company delivering modern solutions.</p>
+  <h2>About NADA</h2>
+
+  <p>
+    <strong>Next Level Advanced Digital Administration (NADA)</strong> is a Malawian digital initiative 
+    founded on principles of innovation, structured governance, and technological advancement. 
+    The organization was initiated at William Murray Secondary School.
+  </p>
+
+  <h3>Founding History & Establishment</h3>
+
+  <p>
+    The concept of NADA was formally proposed by <strong>Edgar Mphepo</strong> on 
+    <strong>06 June 2024 at 19:48:36 hrs</strong> as a student-led initiative focused on 
+    digital innovation and structured administration.
+  </p>
+
+  <p>
+    <strong>Eugene Banda</strong> was present as the first recorded witness during the 
+    initial conceptual discussions and early formation phase of the initiative.
+  </p>
+
+  <p>
+    The initiative was officially announced on 
+    <strong>18 June 2024 at 18:30 hrs</strong>, marking its formal establishment.
+  </p>
+
+  <p>
+    Recruitment into NADA followed a structured interview process. Applicants were 
+    assessed against defined standards, and those who did not meet the criteria were 
+    formally informed of the outcome.
+  </p>
+
+  <p>
+    During its early phase, NADA operated in a controlled and discreet manner to 
+    maintain discipline, focus, and structured growth. This approach supported a 
+    selective recruitment model, ensuring only committed and capable individuals 
+    were integrated, while others contributed ideas and observed its development.
+  </p>
+
+  <p>
+    Today, NADA continues to evolve as a structured digital organization committed 
+    to delivering innovative solutions in administration, networking, and digital systems.
+  </p>
 </div>
 
 <!-- SERVICES -->
@@ -197,27 +241,27 @@ footer {
 
     <!-- WHATSAPP FIRST -->
     <a href="https://wa.me/265894702478?text=Hello%20NADA%2C%20I%20am%20interested%20in%20your%20services" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
     </a>
 
     <!-- FACEBOOK -->
     <a href="https://www.facebook.com/profile.php?id=61564158195804" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
     </a>
 
     <!-- LINKEDIN -->
     <a href="https://www.linkedin.com/in/edgar-mphepo-6940553b8" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733561.png">
     </a>
 
     <!-- INSTAGRAM -->
     <a href="https://www.instagram.com/nadat_ech" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png">
     </a>
 
     <!-- EMAIL -->
     <a href="mailto:nextleveladvanceddigita01@gmail.com">
-      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">
     </a>
 
   </div>
@@ -229,7 +273,6 @@ footer {
   <p>© 2026 NADA — Next Level Advanced Digital Administration</p>
 </footer>
 
-<!-- SPA SMOOTH SCROLL SCRIPT -->
 <script>
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', function(e) {
