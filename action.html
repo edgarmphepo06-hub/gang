@@ -14,7 +14,7 @@ body {
   scroll-behavior:smooth;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 header {
   background:#111;
   padding:15px;
@@ -24,14 +24,17 @@ header {
   z-index:1000;
 }
 
-header img { height:50px; }
-
 nav {
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
 }
 
+nav img {
+  height:45px;
+}
+
+/* MENU */
 nav ul {
   list-style:none;
   display:flex;
@@ -43,6 +46,7 @@ nav ul li a {
   color:#fff;
   padding:10px 15px;
   text-decoration:none;
+  transition:0.3s;
 }
 
 nav ul li a:hover {
@@ -50,43 +54,99 @@ nav ul li a:hover {
   border-radius:5px;
 }
 
-/* HERO */
-.hero {
-  background:linear-gradient(to right,#00bcd4,#0066cc);
+/* HAMBURGER */
+.menu-btn {
+  display:none;
+  font-size:28px;
+  cursor:pointer;
   color:#fff;
-  text-align:center;
-  padding:100px 20px;
 }
 
-.hero h2 { font-size:2.5em; }
+/* ================= HERO (ANIMATED LANDING) ================= */
+.hero {
+  height:100vh;
+  background:linear-gradient(135deg,#00bcd4,#0066cc,#111);
+  background-size:400% 400%;
+  animation:gradientMove 8s ease infinite;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:#fff;
+  padding:20px;
+}
 
-/* CONTAINER */
+.hero h2 {
+  font-size:3em;
+  animation:fadeDown 1.5s ease;
+}
+
+.hero p {
+  font-size:1.2em;
+  max-width:600px;
+  animation:fadeUp 2s ease;
+}
+
+/* BUTTON */
+.hero button {
+  margin-top:20px;
+  padding:12px 25px;
+  border:none;
+  background:#fff;
+  color:#0066cc;
+  font-size:1em;
+  border-radius:6px;
+  cursor:pointer;
+  transition:0.3s;
+  animation:fadeUp 2.5s ease;
+}
+
+.hero button:hover {
+  background:#00bcd4;
+  color:#fff;
+}
+
+/* ANIMATIONS */
+@keyframes fadeDown {
+  from {opacity:0; transform:translateY(-30px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeUp {
+  from {opacity:0; transform:translateY(30px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+@keyframes gradientMove {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
+}
+
+/* ================= CONTAINER ================= */
 .container {
   max-width:1100px;
   margin:auto;
   padding:20px;
 }
 
+/* CARDS */
 .card {
   background:#fff;
   padding:20px;
   margin-bottom:20px;
   border-radius:10px;
-  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+  box-shadow:0 2px 10px rgba(0,0,0,0.08);
+  animation:fadeUp 1s ease;
 }
 
 /* ABOUT */
 #about h3 {
   color:#0066cc;
-  margin-top:20px;
 }
 
-#about p {
-  line-height:1.6;
-  margin-bottom:12px;
-}
-
-/* SERVICES */
+/* ================= SERVICES ================= */
 .services {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -95,9 +155,9 @@ nav ul li a:hover {
 
 .service {
   text-align:center;
+  padding:10px;
 }
 
-/* SERVICE ICONS */
 .service img {
   height:60px;
   margin-bottom:10px;
@@ -105,10 +165,10 @@ nav ul li a:hover {
 }
 
 .service img:hover {
-  transform:scale(1.15);
+  transform:scale(1.2);
 }
 
-/* SOCIAL ICONS */
+/* ================= SOCIAL ================= */
 .social-icons {
   text-align:center;
   margin-top:15px;
@@ -132,87 +192,99 @@ footer {
   color:#aaa;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 @media(max-width:768px){
-  nav ul {
-    flex-direction:column;
-    background:#111;
-  }
-}
 
-/* SCROLL FIX */
-section, .card {
-  scroll-margin-top:80px;
+  .menu-btn {
+    display:block;
+  }
+
+  nav ul {
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:#111;
+    flex-direction:column;
+    display:none;
+  }
+
+  nav ul.show {
+    display:flex;
+  }
+
+  nav ul li a {
+    padding:15px;
+    border-top:1px solid #222;
+  }
+
+  .hero h2 {
+    font-size:2em;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
   <nav>
+
+    <!-- LEFT MENU BUTTON -->
+    <span class="menu-btn" onclick="toggleMenu()">☰</span>
+
     <img src="LOGO.jpg" alt="NADA Logo">
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
+
+    <ul id="menu">
+      <li><a href="#home" onclick="closeMenu()">Home</a></li>
+      <li><a href="#about" onclick="closeMenu()">About</a></li>
+      <li><a href="#services" onclick="closeMenu()">Services</a></li>
+      <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
     </ul>
+
   </nav>
 </header>
 
-<!-- HERO -->
+<!-- HERO (ANIMATED LANDING PAGE) -->
 <section class="hero" id="home">
-  <h2>Welcome to NADA</h2>
-  <p>Next Level Advanced Digital Administration — Innovating Digital Growth</p>
+  <h2>Next Level Advanced Digital Administration</h2>
+  <p>Building modern digital systems, networking solutions, and smart administration platforms in Malawi</p>
+
+  <button onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+    Explore More
+  </button>
 </section>
 
 <div class="container">
 
-<!-- ABOUT (FULL PROFESSIONAL VERSION) -->
+<!-- ABOUT -->
 <div class="card" id="about">
   <h2>About NADA</h2>
 
   <p>
-    <strong>Next Level Advanced Digital Administration (NADA)</strong> is a Malawian digital initiative
-    established to promote innovation, structured administration, and technological advancement.
-    It originated at <strong>William Murray Secondary School</strong>, an institution under the Nkhoma Synod.
+    <strong>NADA</strong> is a Malawian digital initiative focused on innovation and structured administration.
   </p>
 
   <h3>Founding History & Early Establishment</h3>
 
   <p>
-    NADA was conceptually proposed by <strong>Edgar Mphepo</strong> during Form 3 on 
-    <strong>06 June 2024 at 19:48:36 hrs</strong>. It began as a student-driven initiative focused on 
-    digital innovation and structured administrative systems.
+    Proposed by <strong>Edgar Mphepo</strong> on 06 June 2024 at William Murray Secondary School.
   </p>
 
   <p>
-    <strong>Eugene Banda</strong> served as the first recorded witness during the early conceptual stage 
-    and contributed to foundational discussions during the formation phase.
+    <strong>Eugene Banda</strong> served as the first witness during formation.
   </p>
 
   <p>
-    The initiative was officially announced on <strong>18 June 2024 at 18:30 hrs</strong>, marking its 
-    formal establishment within the academic environment.
+    Officially announced on 18 June 2024 at 18:30 hrs.
   </p>
 
   <p>
-    Recruitment was conducted through a structured interview process where applicants were assessed 
-    based on defined criteria. Those who did not meet requirements were formally informed, ensuring 
-    transparency and discipline in selection.
+    Recruitment followed structured interviews to ensure quality selection.
   </p>
 
   <p>
-    During its early phase, NADA operated under a controlled and discreet framework to maintain focus, 
-    discipline, and structured growth. This allowed selective integration of committed individuals 
-    while encouraging external observation and contribution of ideas.
-  </p>
-
-  <p>
-    Today, NADA continues to grow as a structured digital organization focused on delivering innovative 
-    solutions in administration, networking, and digital systems development.
+    Early operations were controlled to maintain discipline and structured growth.
   </p>
 </div>
 
@@ -225,25 +297,21 @@ section, .card {
     <div class="service">
       <img src="https://cdn-icons-png.flaticon.com/512/1048/1048949.png">
       <h3>Network Solutions</h3>
-      <p>Secure and scalable connectivity systems.</p>
     </div>
 
     <div class="service">
       <img src="https://cdn-icons-png.flaticon.com/512/1048/1048926.png">
       <h3>Web Development</h3>
-      <p>Modern responsive websites.</p>
     </div>
 
     <div class="service">
       <img src="https://cdn-icons-png.flaticon.com/512/1048/1048933.png">
       <h3>Graphics & Branding</h3>
-      <p>Creative identity solutions.</p>
     </div>
 
     <div class="service">
       <img src="https://cdn-icons-png.flaticon.com/512/1048/1048913.png">
       <h3>Admin Tools</h3>
-      <p>Efficient digital workflows.</p>
     </div>
 
   </div>
@@ -253,33 +321,24 @@ section, .card {
 <div class="card" id="contact">
   <h2>Contact Us</h2>
 
-  <p><strong>click icons below to reach out to us </strong></p>
+  <p>Email: nextleveladvanceddigita01@gmail.com</p>
 
   <div class="social-icons">
 
-    <!-- WHATSAPP -->
-    <a href="https://wa.me/265894702478?text=Hello%20NADA%2C%20I%20am%20interested%20in%20your%20services" target="_blank">
+    <a href="https://wa.me/265894702478" target="_blank">
       <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
     </a>
 
-    <!-- FACEBOOK -->
     <a href="https://www.facebook.com/profile.php?id=61564158195804" target="_blank">
       <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
     </a>
 
-    <!-- LINKEDIN -->
     <a href="https://www.linkedin.com/in/edgar-mphepo-6940553b8" target="_blank">
       <img src="https://cdn-icons-png.flaticon.com/512/733/733561.png">
     </a>
 
-    <!-- INSTAGRAM -->
     <a href="https://www.instagram.com/nadat_ech" target="_blank">
       <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png">
-    </a>
-
-    <!-- EMAIL -->
-    <a href="mailto:nextleveladvanceddigita01@gmail.com">
-      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">
     </a>
 
   </div>
@@ -287,22 +346,18 @@ section, .card {
 
 </div>
 
-<!-- FOOTER -->
 <footer>
   <p>© 2026 NADA — Next Level Advanced Digital Administration</p>
 </footer>
 
-<!-- SMOOTH SCROLL -->
 <script>
-document.querySelectorAll('nav a').forEach(link => {
-  link.addEventListener('click', function(e) {
-    if (this.getAttribute('href').startsWith('#')) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href'))
-        .scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-});
+function toggleMenu(){
+  document.getElementById("menu").classList.toggle("show");
+}
+
+function closeMenu(){
+  document.getElementById("menu").classList.remove("show");
+}
 </script>
 
 </body>
