@@ -47,6 +47,10 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
 }
 
 body {
@@ -55,6 +59,9 @@ body {
   color: #1a1a2e;
   line-height: 1.7;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -107,6 +114,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
+  max-width: 100vw;
   z-index: 1000;
   padding: 0 24px;
   transition: var(--transition);
@@ -239,6 +247,7 @@ nav {
   justify-content: center;
   overflow: hidden;
   background: var(--dark);
+  max-width: 100vw;
 }
 
 .hero-bg {
@@ -432,6 +441,8 @@ nav {
 /* ===== SECTION STYLES ===== */
 section {
   padding: 100px 24px;
+  max-width: 100vw;
+  overflow: hidden;
 }
 
 .section-header {
@@ -525,6 +536,7 @@ section {
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-lg);
   text-align: center;
+  max-width: calc(100% - 20px);
 }
 
 .about-image-badge strong {
@@ -1054,6 +1066,8 @@ footer {
   background: var(--dark);
   padding: 60px 24px 30px;
   position: relative;
+  max-width: 100vw;
+  overflow: hidden;
 }
 
 .footer-grid {
@@ -1255,12 +1269,13 @@ footer {
     top: 0;
     right: -100%;
     width: 280px;
+    max-width: 85vw;
     height: 100vh;
     background: rgba(10, 10, 26, 0.98);
     backdrop-filter: blur(20px);
     flex-direction: column;
     align-items: flex-start;
-    padding: 100px 30px 30px;
+    padding: 100px 24px 30px;
     gap: 8px;
     transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: -10px 0 40px rgba(0,0,0,0.3);
@@ -1343,6 +1358,14 @@ footer {
 }
 
 @media (max-width: 480px) {
+  header {
+    padding: 0 16px;
+  }
+
+  .hero-content {
+    padding: 16px;
+  }
+
   .hero-content h1 {
     font-size: 1.8rem;
   }
@@ -1359,9 +1382,15 @@ footer {
   .about-image-badge {
     position: relative;
     bottom: 0;
-    right: 0;
+    right: auto;
+    left: 0;
     margin-top: -10px;
     border-radius: 0 0 var(--radius-md) var(--radius-md);
+    max-width: 100%;
+  }
+
+  .about-image-wrapper {
+    overflow: hidden;
   }
 
   .founder-image {
@@ -1378,6 +1407,10 @@ footer {
     font-size: 16px;
     bottom: 20px;
     right: 20px;
+  }
+
+  .hero-scroll {
+    bottom: 20px;
   }
 }
 </style>
