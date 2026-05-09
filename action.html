@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NADA - Next Level Advanced Digital Administration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobile stability -->
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; margin:0; background:#f5f7fa; color:#333; overflow-x:hidden; }
+    header { background:#111; padding:15px; color:#fff; position:sticky; top:0; z-index:1000; }
+    header img { height:50px; vertical-align:middle; }
+    h1 { margin:10px 0; color:#00e0ff; font-size:1.8em; }
+    nav { display:flex; justify-content:space-between; align-items:center; }
+    nav ul { list-style:none; margin:0; padding:0; display:flex; }
+    nav ul li { position:relative; }
+    nav ul li a { color:#fff; padding:10px 15px; text-decoration:none; display:block; transition:0.3s; }
+    nav ul li a:hover { background:#00bcd4; border-radius:5px; }
+    nav ul li ul { display:none; position:absolute; background:#222; min-width:150px; top:100%; left:0; border-radius:5px; }
+    nav ul li:hover ul { display:block; }
+    nav ul li ul li a { padding:10px; }
+    .hero { background:linear-gradient(to right, #00bcd4, #0066cc); color:#fff; text-align:center; padding:100px 20px; }
+    .hero h2 { font-size:2.5em; margin-bottom:20px; animation: fadeInDown 2s; }
+    .hero p { font-size:1.2em; animation: fadeInUp 2s; }
+    .hero button { margin-top:20px; padding:12px 25px; font-size:1em; border:none; border-radius:5px; background:#fff; color:#0066cc; cursor:pointer; transition:0.3s; }
+    .hero button:hover { background:#00e0ff; color:#111; }
+    @keyframes fadeInDown { from {opacity:0; transform:translateY(-30px);} to {opacity:1; transform:translateY(0);} }
+    @keyframes fadeInUp { from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);} }
+    .container { max-width:1100px; margin:auto; padding:20px; }
+    .card { background:#fff; padding:20px; margin-bottom:20px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1); transition:0.3s; }
+    .card:hover { transform:translateY(-5px); }
+    .services { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+    .service { text-align:center; padding:15px; }
+    .service img { height:60px; margin-bottom:10px; transition:0.3s; }
+    .service img:hover { transform:scale(1.2); }
+    footer { text-align:center; padding:15px; background:#111; color:#aaa; }
+    .social-icons a { margin:0 10px; text-decoration:none; }
+    .social-icons img { height:30px; vertical-align:middle; transition:0.3s; }
+    .social-icons img:hover { transform:scale(1.2); }
+    h2 { color:#00bcd4; }
+    @media(max-width:768px){
+      nav ul { flex-direction:column; background:#111; }
+      nav ul li { width:100%; }
+      .hero h2 { font-size:2em; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <img src="LOGO.jpg" alt="NADA Logo">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services ▾</a>
+          <ul>
+            <li><a href="#network">Network Solutions</a></li>
+            <li><a href="#web">Web Development</a></li>
+            <li><a href="#design">Graphics & Branding</a></li>
+            <li><a href="#admin">Administration Tools</a></li>
+          </ul>
+        </li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home Hero Section -->
+  <section class="hero" id="home">
+    <h2>Welcome to NADA</h2>
+    <p>Next Level Advanced Digital Administration — Innovating Network Solutions & Digital Growth</p>
+    <button onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">Learn More</button>
+  </section>
+
+  <div class="container">
+    <!-- About -->
+    <div class="card" id="about">
+      <h2>About Us</h2>
+      <p>
+        The Next Level Advanced Digital Administration (NADA) was initiated at William Murray Secondary School, 
+        an official Nkhoma Synod learning institution in Malawi.
+      </p>
+      <p>
+        <strong>Edgar Mphepo</strong> is the CEO and Founder of NADA. He proposed the concept on <strong>06 June 2024</strong> 
+        and formally announced it on <strong>18 June 2024</strong>.
+      </p>
+      <p>
+        <strong>Eugene Banda</strong> worked with NADA throughout its early years as an ideologist and marketing team member. 
+        He served as COO when NADA was a two‑person company, but is officially recognized as the first witness and employee. 
+        Eugene retired in <strong>July 2025</strong>, soon after finishing secondary school at William Murray.
+      </p>
+      <p>
+        Due to secret operations, the company attracted interest from many students who were eager to discover what NADA was all about. 
+        Edgar announced NADA to the world after leaving William Murray, following approval by the Board of Directors — consisting of departmental directors and the holding CEO — 
+        on <strong>13 August 2025</strong> at <strong>15:17:09 hrs</strong>.
+      </p>
+      <p>
+        Today, NADA has grown into a company with a centralized structure and a strong team of employees, 
+        continuing to deliver innovative digital administration and network solutions.
+      </p>
+    </div>
+
+    <!-- Services -->
+    <div class="card" id="services">
+      <h2>Our Services</h2>
+      <div class="services">
+        <div class="service" id="network">
+          <img src="https://cdn-icons-png.flaticon.com/512/1048/1048949.png" alt="Network Configuration">
+          <h3>Network Configuration</h3>
+          <p>Optimizing systems for secure and efficient connectivity.</p>
+        </div>
+        <div class="service">
+          <img src="https://cdn-icons-png.flaticon.com/512/1048/1048910.png" alt="Network Design">
+          <h3>Network Design</h3>
+          <p>Creating scalable and reliable network architectures.</p>
+        </div>
+        <div class="service">
+          <img src="https://cdn-icons-png.flaticon.com/512/1048/1048917.png" alt="Network Maintenance">
+          <h3>Network Maintenance</h3>
+          <p>Ensuring smooth operations with proactive troubleshooting.</p>
+        </div>
+        <div class="service" id="web">
+          <img src="https://cdn-icons-png.flaticon.com/512/1048/1048926.png" alt="Website Development">
+          <h3>Website Development</h3>
+          <p>Building modern, responsive websites tailored to your needs.</p>
+        </div>
+        <div class="service" id="design">
+          <img src="https://cdn-icons-png.flaticon.com/512/1048/1048933.png" alt="Graphics Design">
+          <h3>Graphics Design</h3>
+          <p>Creative visuals for branding, marketing, and communication.</p>
+        </div>
+        <div class="service">
+          <img src="https://cdn-icons-png.flaticon.com/512/1048/1048920.png" alt="Digital Branding">
+          <h3>Digital Branding</h3>
+          <p>Strengthening your identity with professional digital strategies.</p>
+        </div>
+        <div class="service">
+          <img src="https://cdn-icons-png.flaticon.com/512/1048/1048913.png" alt="Administration Tools">
+          <h3>Administration Tools</h3>
+          <p>Efficient solutions for streamlined administrative tasks.</p>
+        </div>
