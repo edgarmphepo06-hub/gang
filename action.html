@@ -1902,7 +1902,7 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 revealElements.forEach(el => revealObserver.observe(el));
 
-// ----- Form Handler -----
+// ----- Form Handler (WhatsApp) -----
 function handleSubmit(e) {
   e.preventDefault();
 
@@ -1911,10 +1911,11 @@ function handleSubmit(e) {
   const subject = document.getElementById('subject').value || 'Inquiry';
   const message = document.getElementById('message').value;
 
-  const mailtoLink = `mailto:nextleveladvanceddigita01@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message)}`;
+  const whatsappText = `Hello NADA!%0A%0AName: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0ASubject: ${encodeURIComponent(subject)}%0AMessage: ${encodeURIComponent(message)}`;
+  const whatsappLink = `https://wa.me/265894702478?text=${whatsappText}`;
 
-  window.location.href = mailtoLink;
-  alert('Thank you for reaching out! Your message will be sent via email.');
+  window.open(whatsappLink, '_blank');
+  alert('Thank you for reaching out! Your message will be sent via WhatsApp.');
   e.target.reset();
 }
 
