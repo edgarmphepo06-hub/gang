@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pamadyo Snack Centre — Fresh Food, Fast Delivery</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome 6 (Free Icons) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- External Stylesheet -->
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<!-- ===== LOADER ===== -->
+<div class="loader" id="loader">
+  <div class="loader-icon"></div>
+  <div class="loader-dots"><span></span><span></span><span></span></div>
+  <span>Loading Pamadyo…</span>
+</div>
+
+<!-- ===== NAVBAR ===== -->
+<header class="navbar" id="navbar">
+  <div class="navbar-container">
+    <div class="navbar-brand">
+      <i class="fas fa-utensils"></i>
+      <span>Pamadyo Snack Centre</span>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
+      <a class="nav-link" href="#" data-section="hero"><i class="fas fa-home"></i> Home</a>
+      <a class="nav-link" href="#" data-section="menu"><i class="fas fa-burger"></i> Menu</a>
+      <a class="nav-link" href="#" data-section="order"><i class="fas fa-cart-shopping"></i> Order</a>
+      <a class="nav-link" href="#" data-section="contact"><i class="fas fa-envelope"></i> Contact</a>
+      <a class="nav-link" href="#" data-section="inquiries"><i class="fas fa-circle-question"></i> Inquiries</a>
+      <a class="nav-link cta" href="https://wa.me/265998136465" target="_blank"><i class="fab fa-whatsapp"></i> Order Now</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== PAGE WRAPPER ===== -->
+<main class="page-wrapper">
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero section" id="hero">
+    <div class="hero-decoration">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <h2>Fresh food,<br>fast delivery.</h2>
+        <p>Order with confidence from Pamadyo Snack Centre. Freshly prepared meals, fast delivery, and the best taste in town. Your satisfaction is our recipe.</p>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="showSection('menu')">
+            <i class="fas fa-burger"></i> View Menu
+          </button>
+          <button class="btn-secondary" onclick="toggleCart(true)">
+            <i class="fas fa-cart-shopping"></i> Order Now
+          </button>
+        </div>
+        <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;font-size:0.9rem;color:var(--muted);">
+          <span><i class="fas fa-check-circle" style="color:var(--primary)"></i> Fresh ingredients</span>
+          <span><i class="fas fa-check-circle" style="color:var(--primary)"></i> Quick delivery</span>
+          <span><i class="fas fa-check-circle" style="color:var(--primary)"></i> Best price</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <img src="hello.jpg" alt="Delicious meal from Pamadyo Snack Centre" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MENU SECTION ===== -->
+  <section class="section page-section" id="menu" style="display:none;">
+    <div class="section-header">
+      <div>
+        <h3><i class="fas fa-burger" style="margin-right:10px;"></i> Our Menu</h3>
+        <p class="section-description">Select your dishes, review your cart, and submit your order. We will prepare your selection immediately after you confirm the WhatsApp order.</p>
+      </div>
+      <div class="menu-icon"><i class="fas fa-utensils"></i></div>
+    </div>
+
+    <div class="menu-grid">
+      <!-- Menu Categories -->
+      <div class="menu-card">
+        <div class="menu-category">
+          <div class="category-header">
+            <h4><i class="fas fa-french-fries"></i> Snacks</h4>
+          </div>
+
+          <div class="menu-item">
+            <div>
+              <h5>Chips & Salad</h5>
+              <p>Crispy chips served with fresh garden salad</p>
+            </div>
+            <button class="btn-menu-add" onclick="add('Chips & Salad',4000)">
+              <span>MWK 4,000</span>
+              <i class="fas fa-plus-circle"></i>
+            </button>
+          </div>
+
+          <div class="menu-item">
+            <div>
+              <h5>Chips & 2 Eggs</h5>
+              <p>Golden chips paired with two fried eggs</p>
+            </div>
+            <button class="btn-menu-add" onclick="add('Chips & 2 Eggs',6000)">
+              <span>MWK 6,000</span>
+              <i class="fas fa-plus-circle"></i>
+            </button>
+          </div>
+
+          <div class="menu-item">
+            <div>
+              <h5>Chips & Chicken</h5>
+              <p>Hearty chips with tender grilled chicken</p>
+            </div>
+            <button class="btn-menu-add" onclick="add('Chips & Chicken',6500)">
+              <span>MWK 6,500</span>
+              <i class="fas fa-plus-circle"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Menu Visual -->
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <div class="menu-category">
+          <div class="category-header">
+            <h4><i class="fas fa-bolt"></i> Popular Choices</h4>
+          </div>
+          <p style="margin:0;color:var(--muted);font-size:0.95rem;">
+            All our meals are prepared with fresh, quality ingredients. 
+            Tap the <strong>+</strong> button to add items to your cart.
+          </p>
+        </div>
+        <div style="border-radius:28px;overflow:hidden;box-shadow:var(--shadow-md);">
+          <img src="menu.jpg" alt="Popular menu items" style="width:100%;display:block;" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ORDER / CART SECTION ===== -->
+  <section class="section page-section" id="order" style="display:none;">
+    <div class="section-header">
+      <div>
+        <h3><i class="fas fa-cart-shopping" style="margin-right:10px;"></i> Your Order</h3>
+        <p class="section-description">Review your selections, enter your details, and send your order via WhatsApp.</p>
+      </div>
+    </div>
+
+    <!-- Cart Panel (now inline in the section) -->
+    <div class="cart-inline" id="cartInline">
+      <div class="cart-header">
+        <h4><i class="fas fa-receipt"></i> Order Receipt</h4>
+        <span class="cart-badge" id="count">0</span>
+      </div>
+      <div id="items" class="cart-items">
+        <p style="color:var(--muted);text-align:center;padding:24px 0;">Your cart is empty. Add items from the menu to start.</p>
+      </div>
+      <div class="cart-total" id="cartTotal">
+        <span>Total</span>
+        <strong>MWK 0</strong>
+      </div>
+
+      <div class="cart-form">
+        <input type="text" id="name" placeholder="Your full name" required>
+        <input type="text" id="loc" placeholder="Delivery location" required>
+        <input type="tel" id="phone" placeholder="Phone number (e.g. 265998136465)" required>
+      </div>
+
+      <div class="cart-actions">
+        <button class="btn-primary" onclick="checkout()" style="text-align:center;justify-content:center;">
+          <i class="fab fa-whatsapp"></i> Send Order via WhatsApp
+        </button>
+        <button class="btn-secondary" onclick="clearCart()" style="background:rgba(239,68,68,0.1);color:#ef4444;border-color:#ef4444;text-align:center;justify-content:center;">
+          <i class="fas fa-trash-can"></i> Clear Cart
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="section page-section" id="contact" style="display:none;">
+    <div class="section-header">
+      <div>
+        <h3><i class="fas fa-envelope" style="margin-right:10px;"></i> Contact Us</h3>
+        <p class="section-description">We'd love to hear from you. Get in touch with our team.</p>
+      </div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h4><i class="fab fa-whatsapp"></i> WhatsApp Orders</h4>
+        <p>Send us a message on WhatsApp to place your order quickly and easily.</p>
+        <br>
+        <a href="https://wa.me/265998136465" target="_blank" class="btn-primary" style="display:inline-flex;text-decoration:none;">
+          <i class="fab fa-whatsapp"></i> Order on WhatsApp
+        </a>
+      </div>
+
+      <div class="card">
+        <h4><i class="fas fa-phone"></i> Call Us</h4>
+        <p>Prefer to speak with us directly? Give us a call during business hours.</p>
+        <br>
+        <a href="tel:+265998136465" class="btn-secondary" style="display:inline-flex;text-decoration:none;">
+          <i class="fas fa-phone"></i> +265 99 813 6465
+        </a>
+      </div>
+
+      <div class="card">
+        <h4><i class="fab fa-facebook"></i> Follow Us</h4>
+        <p>Stay updated with our latest meals, offers, and news on Facebook.</p>
+        <br>
+        <a href="https://www.facebook.com/vincent.demoticmphepo" target="_blank" class="btn-primary" style="display:inline-flex;text-decoration:none;background:linear-gradient(135deg,#1877f2,#0c63e4);">
+          <i class="fab fa-facebook"></i> Follow on Facebook
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INQUIRIES SECTION ===== -->
+  <section class="section page-section" id="inquiries" style="display:none;">
+    <div class="section-header">
+      <div>
+        <h3><i class="fas fa-circle-question" style="margin-right:10px;"></i> Inquiries</h3>
+        <p class="section-description">Have a question, dietary preference, or special request? Send it here and our team will respond promptly.</p>
+      </div>
+    </div>
+
+    <div class="card" style="max-width:640px;margin:0 auto;">
+      <h4><i class="fas fa-pen-to-square"></i> Send an Inquiry</h4>
+      <br>
+      <div class="cart-form">
+        <input type="text" id="inquiry-name" placeholder="Your name">
+        <input type="tel" id="inquiry-phone" placeholder="Your phone number">
+        <textarea id="inquiry-message" placeholder="Write your inquiry, dietary preference, or special request here…" rows="5"></textarea>
+      </div>
+      <button class="btn-primary" onclick="sendInquiry()" style="margin-top:16px;justify-content:center;width:100%;">
+        <i class="fab fa-whatsapp"></i> Send Inquiry
+      </button>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-decoration">
+    <div class="wave"></div>
+  </div>
+
+  <div class="page-wrapper" style="padding-bottom:0;">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4><i class="fas fa-store"></i> About Us</h4>
+        <p>Pamadyo Snack Centre serves fresh, quality meals with fast delivery. Order now and taste the difference.</p>
+        <div class="footer-contact" style="margin-top:16px;">
+          <p><i class="fas fa-clock"></i> Mon-Fri: 11:00-21:00</p>
+          <p><i class="fas fa-clock"></i> Sat-Sun: 12:00-22:00</p>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4><i class="fas fa-link"></i> Quick Links</h4>
+        <div class="footer-links">
+          <a href="#" onclick="showSection('hero');return false;"><i class="fas fa-chevron-right"></i> Home</a>
+          <a href="#" onclick="showSection('menu');return false;"><i class="fas fa-chevron-right"></i> Menu</a>
+          <a href="#" onclick="toggleCart(true);return false;"><i class="fas fa-chevron-right"></i> Order</a>
+          <a href="#" onclick="showSection('inquiries');return false;"><i class="fas fa-chevron-right"></i> Inquiries</a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4><i class="fas fa-share-nodes"></i> Connect With Us</h4>
+        <div class="social-links">
+          <a href="https://wa.me/265998136465" target="_blank" class="social-btn" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="https://www.facebook.com/vincent.demoticmphepo" target="_blank" class="social-btn facebook" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="tel:+265998136465" class="social-btn" aria-label="Phone">
+            <i class="fas fa-phone"></i>
+          </a>
+        </div>
+        <p style="margin-top:12px;font-size:0.9rem;">Orders accepted anytime via WhatsApp</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Pamadyo Snack Centre. All rights reserved. | Fresh food, fast delivery.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+let cart = [];
+
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+const fixedNumber = '265998136465';
+
+// Hamburger toggle
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('active');
+});
+
+// Close nav on link click
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', e => {
+    const section = e.currentTarget.dataset.section;
+    if (section) {
+      e.preventDefault();
+      showSection(section);
+    }
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+  });
+});
+
+function showSection(target) {
+  document.querySelectorAll('.page-section').forEach(s => {
+    s.style.display = 'none';
+  });
+  document.querySelectorAll('.hero').forEach(s => {
+    s.style.display = 'none';
+  });
+  if (target === 'hero') {
+    document.getElementById('hero').style.display = 'block';
+  } else {
+    const el = document.getElementById(target);
+    if (el) el.style.display = 'block';
+  }
+  // Scroll to top smoothly
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function add(name, price) {
+  const existing = cart.find(item => item.name === name);
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    cart.push({ name, price, qty: 1 });
+  }
+  render();
+  showSection('order');
+}
+
+function render() {
+  let html = '';
+  let count = 0;
+  let total = 0;
+  cart.forEach(item => {
+    count += item.qty;
+    total += item.price * item.qty;
+    html += `<div class="cart-item">
+      <div class="cart-item-info">
+        <span class="cart-item-name">${item.name}</span>
+        <span class="cart-item-qty">Qty: ${item.qty}</span>
+      </div>
+      <div class="cart-item-actions">
+        <span class="cart-item-price">MWK ${(item.price * item.qty).toLocaleString()}</span>
+        <button class="cart-item-remove" onclick="removeItem('${item.name}')" title="Remove one"><i class="fas fa-minus"></i></button>
+      </div>
+    </div>`;
+  });
+  document.getElementById('items').innerHTML = html || '<p style="color:var(--muted);text-align:center;padding:24px 0;">Your cart is empty. Add items from the menu to start.</p>';
+  document.getElementById('count').innerText = count;
+  document.querySelector('#cartTotal strong').innerText = `MWK ${total.toLocaleString()}`;
+}
+
+function removeItem(name) {
+  const idx = cart.findIndex(item => item.name === name);
+  if (idx !== -1) {
+    if (cart[idx].qty > 1) {
+      cart[idx].qty -= 1;
+    } else {
+      cart.splice(idx, 1);
+    }
+  }
+  render();
+}
+
+function clearCart() {
+  cart = [];
+  render();
+}
+
+function toggleCart(show) {
+  showSection('order');
+}
+
+function checkout() {
+  if (cart.length === 0) {
+    return alert('Your cart is empty. Please add items from the menu first.');
+  }
+
+  const customerName = document.getElementById('name').value.trim();
+  const location = document.getElementById('loc').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+
+  if (!customerName || !location || !phone) {
+    return alert('Please fill in your name, delivery location, and phone number.');
+  }
+
+  const confirmed = confirm(`Send your order via WhatsApp to +265 99 813 6465?`);
+  if (!confirmed) return;
+
+  let message = `🧾 *Pamadyo Snack Centre Order*\n\n👤 Name: ${customerName}\n📞 Phone: ${phone}\n📍 Location: ${location}\n\n━━━━━━━━━━━━━━\n`;
+  let total = 0;
+  cart.forEach(item => {
+    const itemTotal = item.price * item.qty;
+    total += itemTotal;
+    message += `${item.name} x${item.qty} = MWK ${itemTotal.toLocaleString()}\n`;
+  });
+  message += `━━━━━━━━━━━━━━\n💰 *Total: MWK ${total.toLocaleString()}*`;
+
+  window.open(`https://wa.me/${fixedNumber}?text=${encodeURIComponent(message)}`, '_blank');
+
+  cart = [];
+  render();
+  document.getElementById('name').value = '';
+  document.getElementById('loc').value = '';
+  document.getElementById('phone').value = '';
+  showSection('hero');
+}
+
+function sendInquiry() {
+  const name = document.getElementById('inquiry-name').value.trim();
+  const phone = document.getElementById('inquiry-phone').value.trim();
+  const messageText = document.getElementById('inquiry-message').value.trim();
+
+  if (!name || !phone || !messageText) {
+    return alert('Please fill in your name, phone number, and inquiry message.');
+  }
+
+  const confirmed = confirm('Send this inquiry via WhatsApp?');
+  if (!confirmed) return;
+
+  const inquiryMessage = `❓ *Pamadyo Snack Centre Inquiry*\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n\n━━━━━━━━━━━━━━\n${messageText}`;
+  window.open(`https://wa.me/${fixedNumber}?text=${encodeURIComponent(inquiryMessage)}`, '_blank');
+
+  document.getElementById('inquiry-name').value = '';
+  document.getElementById('inquiry-phone').value = '';
+  document.getElementById('inquiry-message').value = '';
+  alert('Your inquiry has been sent. We will respond shortly. Thank you!');
+}
+
+// Close loader
+window.onload = () => {
+  setTimeout(() => {
+    document.getElementById('loader').style.display = 'none';
+  }, 1200);
+  render();
+};
+</script>
+
+</body>
+</html>
